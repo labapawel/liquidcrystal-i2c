@@ -9,3 +9,16 @@ Only the i2c functionality is kept from the arduino original library, there is n
 other methods of accessing the LCD screens.
 
 License as the original (CC-BY-SA), changes and Linux i2c device adaptions are (C) Kaj-Michael Lang <milang@tal.org>
+
+### Instalacja
+
+	git clone https://github.com/labapawel/liquidcrystal-i2c.git
+
+### kompilacja
+
+	make
+
+### Wykonanie 
+
+	lcdwrite "Linia jeden" "linia dwa"
+
