@@ -3,6 +3,8 @@ C++ i2c LCD library
 
 Wyswietlanie komunikatow za pomoca I2C na lcd 
 
+Wiecej na http://www.orangepi.pl
+
 ### Instalacja
 
 	git clone https://github.com/labapawel/liquidcrystal-i2c.git
