@@ -9,12 +9,12 @@ CC=g++
 
 PREFIX=/usr/local
 
-all: static test-lcd
+all: static lcdwrite
 
 main.o: main.cpp
 
-test-lcd: main.o $(OBJ) 
-	$(CC) -o test-lcd main.o $(OBJ)
+lcdwrite: main.o $(OBJ) 
+	$(CC) -o lcdwrite main.o $(OBJ)
 
 static:	$(STATIC)
 

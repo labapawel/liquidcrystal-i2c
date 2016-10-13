@@ -38,8 +38,13 @@ uint8_t bl=3;
 uint8_t rows=4;
 uint8_t cols=20;
 
-string line;
 uint8_t linia=0; 
+
+if(argc == 1)
+{
+ cout << "wywolanie:\n\t lcdwrite \"linia 1\" \"linia 2\"\n\n";
+ return 0;
+}
 
 LiquidCrystal_I2C lcd("/dev/i2c-0", i2c, en, rw, rs, d4, d5, d6, d7, bl, POSITIVE);
 
@@ -48,25 +53,11 @@ lcd.begin(cols, rows);
 lcd.on();
 lcd.clear();
 
+for(uint8_t i = 1; i<=argc-1; i++)
+{
+	lcd.setCursor(0, i-1);
+	lcd.print(argv[i]);
+}
+return 0;
 
- while(1){
-   linia=0;
-	ifstream  myfile ("example.txt",ios::in); 
-  if (myfile.is_open()) {
-	lcd.clear();
-
-	while ( getline (myfile, line) )
-    	{
-	
-	lcd.setCursor(0, linia);
-
-     	lcd.print(line.c_str());//data.c_str()
-	linia++;
-    	}
-
-   	myfile.close();
-  }
- sleep(1);
- }
-//lcd.clear();
 }
